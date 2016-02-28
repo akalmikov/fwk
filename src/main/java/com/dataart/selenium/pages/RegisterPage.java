@@ -27,7 +27,7 @@ public class RegisterPage extends BasePage {
     WebElement registerButton;
 
 
-    public void registerAs (User newuser) {
+    public HomePage registerAs (User newuser) {
         nameTextField.clear();
         firstNameTextField.clear();
         lastNameTextField.clear();
@@ -38,9 +38,10 @@ public class RegisterPage extends BasePage {
         lastNameTextField.sendKeys(newuser.getLname());
         passwordTextField.sendKeys(newuser.getPassword());
         confirmPasswordTextField.sendKeys(newuser.getPassword());
-//        return initPage(HomePage.class);
+
         roleDropDown.click();
         registerButton.click();
+        return initPage(HomePage.class);
     }
 
     public static final String RNAME_TEXT_FIELD_XPATH = "//div[1]/form/table/tbody/tr[1]/td[2]/input";
